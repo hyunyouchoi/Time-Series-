@@ -1,0 +1,71 @@
+find unique value
+unique(wilshire_df$co_ind)
+
+find all columns name
+names(df)
+
+clean memory
+rm(list=ls())
+gc()
+
+merge two columns and create new
+df$col3 <- paste(df$col1,df$col2)
+
+select certain column
+df2 <- df[,c("col1","col2", "col3")]
+
+change dtype 
+df %>% mutate_if(is.factor, as.character) -> df
+
+save file 
+write.csv(MyData, file = "MyData.csv")
+
+join
+left_join(df1, df2,  by =c("key1" = "key2","key3" = "key4"))
+
+change column name
+colnames(original name)<- c("new name")
+
+find the length
+length(df$col1)
+length(which(!is.na(df$col1))) <- count length of non NA
+
+compute the mean
+mean(df$col1, na.rm = TRUE)
+
+Global test of model assumptions
+library(gvlma)
+gvmodel <- gvlma(fit) 
+summary(gvmodel)
+
+drop the columns
+drops <- c("week_from", "week_to")
+s.vle2 <- s.vle2[, !(names(s.vle2) %in% drops)]
+
+#model selection(aic,bic ????)#
+lit<-list(fit1,fit2,fit3,fit4,fit5,fit6,fit7)
+aic<-sapply(lit,AIC)
+bic<-sapply(lit,BIC)
+a[i]<-which(rank(aic)==1)    #a : AIC? ?? ?? ??
+b[i]<-which(rank(bic)==1)    #b : BIC? ?? ?? ??
+}
+result.pc<-list(AIC=table(a)*.1,BIC=table(b)*.1)
+result.pc
+
+#Grep word
+dfSubset2 <- df[grep("word", df$col1), ]
+
+count by group
+library(plyr)
+count(dfSubset, "loanTypeDescr")
+
+drop missing row
+df[complete.cases(df), ]
+
+#drop the row if student drop the class before the class start
+df_cox <-  df_cox[df_cox$date_unregistration > 0,]
+
+#shiny - https://hyunyouchoi.shinyapps.io/hello/
+
+filter
+df_new = filter(df, qtr_dt >= "2007-06-30", qtr_dt <= "2016-12-31")
